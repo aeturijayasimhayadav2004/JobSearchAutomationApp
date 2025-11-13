@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "job-search-automation"
+version = "0.1.0"
+description = "Retrieval augmented job search and application automation pipeline"
+authors = [{name = "JobSearchAutomation"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "flask>=3.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["job_search_automation*"]
