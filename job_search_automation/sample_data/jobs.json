@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Senior Python Backend Engineer",
+    "company": "Acme Analytics",
+    "location": "Remote - US",
+    "url": "https://example.com/jobs/1",
+    "salary": "$140k - $170k",
+    "description": "Design scalable APIs in Python, collaborate with data science teams, and deploy services to AWS. Experience with Flask and asynchronous programming preferred."
+  },
+  {
+    "title": "Machine Learning Engineer",
+    "company": "Insightful AI",
+    "location": "New York, NY",
+    "url": "https://example.com/jobs/2",
+    "salary": "$130k - $160k",
+    "description": "Build ML pipelines, tune models, and ship production-ready features. Required: PyTorch, Python, feature engineering, and MLOps experience."
+  },
+  {
+    "title": "Full Stack Developer (React/Python)",
+    "company": "LaunchPad Labs",
+    "location": "Austin, TX",
+    "url": "https://example.com/jobs/3",
+    "salary": "$110k - $135k",
+    "description": "Develop full stack web applications using React, Flask, and PostgreSQL. Collaborate with designers and product managers to ship features quickly."
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Pipeline Pros",
+    "location": "Remote - EU",
+    "url": "https://example.com/jobs/4",
+    "salary": "$120k - $150k",
+    "description": "Own ETL workflows, manage data lakes, and optimize Spark jobs. Strong SQL and cloud infrastructure experience required."
+  },
+  {
+    "title": "DevOps Engineer",
+    "company": "CloudOps Co",
+    "location": "San Francisco, CA",
+    "url": "https://example.com/jobs/5",
+    "salary": "$125k - $155k",
+    "description": "Implement CI/CD pipelines, manage Kubernetes clusters, and improve developer tooling. Experience with Terraform and observability tooling is a plus."
+  }
+]
