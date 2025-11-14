@@ -1,6 +1,8 @@
 """Flask web application that wraps the job matching pipeline."""
 from __future__ import annotations
 
+import os
+import textwrap
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
@@ -79,4 +81,22 @@ def create_app(template_folder: str | None = None) -> Flask:
     return app
 
 
-__all__ = ["create_app"]
+def main() -> None:
+    """Run the Flask development server for local exploration."""
+
+    host = os.environ.get("FLASK_RUN_HOST", "127.0.0.1")
+    port = int(os.environ.get("FLASK_RUN_PORT", "5000"))
+
+    display_host = "127.0.0.1" if host == "0.0.0.0" else host
+    message = textwrap.dedent(
+        f"""
+        Job Search Automation web UI is starting.
+        Once the server reports it is running, open http://{display_host}:{port} in your browser.
+        """
+    ).strip()
+    print(message)
+
+    create_app().run(host=host, port=port, debug=False)
+
+
+__all__ = ["create_app", "main"]

@@ -12,7 +12,11 @@ requires-python = ">=3.10"
 dependencies = [
     "requests>=2.31.0",
     "flask>=3.0.0",
+    "gunicorn>=21.2.0",
 ]
+
+[project.scripts]
+job-search-web = "job_search_automation.webapp:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

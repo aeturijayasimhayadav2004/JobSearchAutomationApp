@@ -12,28 +12,36 @@ This project provides a Retrieval Augmented Generation (RAG) workflow that searc
 
 ## Getting Started
 
-1. Install dependencies:
+1. Create and activate a virtual environment (recommended), then install dependencies:
 
    ```bash
+   python -m venv .venv
+   source .venv/bin/activate
    pip install -e .
    ```
 
-2. (Optional) Export API keys if you plan to call OpenAI or SerpAPI directly:
+2. Start the web experience locally. The `app.py` helper spins up Flask with sensible defaults so you only need a single command:
+
+   ```bash
+   python app.py
+   ```
+
+   Once the console shows the startup message, open <http://127.0.0.1:5000> (or the host/port you configured) to access the UI. You can still use the existing module entry point if you prefer `python -m job_search_automation.webapp` or the `flask --app job_search_automation.webapp:create_app run` workflow.
+
+3. (Optional) Export API keys if you plan to call OpenAI or SerpAPI directly:
 
    ```bash
    export OPENAI_API_KEY="sk-your-key"          # enables OpenAI reasoning
    export SERPAPI_API_KEY="serpapi-key"         # enables live Google Jobs search
    ```
 
-3. Launch the Flask web application:
+4. Deploy the Flask app anywhere that supports a WSGI server. This repository ships with a `Procfile` so platforms like Render, Railway, or Heroku can boot the application automatically. After installing the package (`pip install -e .`), point your process to `gunicorn app:app` or reuse the provided `Procfile`:
 
    ```bash
-   flask --app job_search_automation.webapp:create_app run --reload
+   gunicorn app:app --bind 0.0.0.0:$PORT
    ```
 
-   Then open <http://127.0.0.1:5000> and paste your resume text plus optional keywords/location filters. The bundled dataset provides a curated set of Python-focused roles so the demo works fully offline.
-
-4. Prefer the original CLI workflow? Prepare a resume file (TXT, Markdown, or PDF) and run:
+5. Prefer the original CLI workflow? Prepare a resume file (TXT, Markdown, or PDF) and run:
 
    ```bash
    python -m job_search_automation.cli resume.txt "machine learning" "python" --location "Remote" --webhook https://example.com/apply
